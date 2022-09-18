@@ -2,7 +2,7 @@ package Leetcode75;
 
 import java.util.*;
 //  1. 1480. Running Sum of 1d Array
-class Solution {
+class Solution_1 {
     public int[] runningSum(int[] nums) {
         
         int sum = 0;
