@@ -1,42 +1,46 @@
 package Leetcode75;
 
 import java.util.*;
-// 724. Find Pivot Index
-class Solution_2 {
-    public int[] pivotIndex(int[] nums) {
-        return nums;
+// 205. Isomorphic Strings
+class Solution_3 {
+    public boolean isIsomorphic(String s, String t) {
+        return false;
     }
     public static void main(String[] args) throws Exception {
-        int nums[] = {1,2,3};
-        int answ = 0;
-
-        int pivot_index = 0;
-        int leftsum = 0, rightsum = 0;
-        ArrayList<Integer> runnungSum = new ArrayList<>();
-        int sum = 0;
-        for (int i = 0; i < nums.length; i++) {
-            sum = sum + nums[i];
-            runnungSum.add(sum);
-        }
+        String s = "paper", t = "pepar";
+        int length = s.length();
         
-        for (pivot_index = 0; pivot_index < nums.length; pivot_index++) {
-            leftsum = runnungSum.get(pivot_index) - nums[pivot_index];
-            rightsum = runnungSum.get(nums.length-1) - runnungSum.get(pivot_index);
-            if (rightsum == leftsum) {
-                // find valid pivot index -> pivot
-                answ = pivot_index;
-            }else if( pivot_index == nums.length-1){
-                // no valid pivot index found
-                answ = -1;
-            }else{
-                // has not found pivot -> next pivot index
-                continue;
+        HashMap<Character, Character> sstrmap = new HashMap<>();
+        HashMap<Character, Character> tstrmap = new HashMap<>();
+        
+
+
+        // create a mapping structure
+        for (int i = 0; i < length; i++) {
+            sstrmap.put(s.charAt(i), t.charAt(i));
+            tstrmap.put(t.charAt(i), s.charAt(i));    
+        }
+    
+        HashSet<Character> svalueSet = new HashSet<>();
+        svalueSet.addAll(sstrmap.values());
+        HashSet<Character> tvalueSet = new HashSet<>();
+        tvalueSet.addAll(tstrmap.values());
+
+        if(svalueSet.size() != sstrmap.values().size()){
+            System.out.println("false");
+        }
+
+        if(tvalueSet.size() != tstrmap.values().size()){
+            System.out.println("false");
+        }
+        for (int i = 0; i < length; i++) {
+            if(sstrmap.get(s.charAt(i)) != t.charAt(i)){
+                System.out.println("false");
             }
-        
         }
-        System.out.println("done");
-        System.out.println(answ);
+        System.out.println("true");
 
+        
     }
 }
 
