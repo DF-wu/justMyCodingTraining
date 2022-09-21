@@ -7,7 +7,7 @@ class Solution_3 {
         return false;
     }
     public static void main(String[] args) throws Exception {
-        String s = "paper", t = "pepar";
+        String s = "abbcccb", t = "pepar";
         int length = s.length();
         
         HashMap<Character, Character> sstrmap = new HashMap<>();
