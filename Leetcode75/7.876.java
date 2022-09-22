@@ -12,7 +12,7 @@ package Leetcode75;
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution7 {
     public ListNode middleNode(ListNode head) {
         int midpos = listLength(head, 0)/2;
         int steps = 0;

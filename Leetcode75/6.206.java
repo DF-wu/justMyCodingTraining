@@ -13,7 +13,7 @@ package Leetcode75;
  * }
  */
 import java.util.*;
-class Solution {
+class Solution_6 {
     public ListNode reverseList(ListNode head) {
         if(head == null) return null;
         ArrayList<ListNode> result = new ArrayList<>();
