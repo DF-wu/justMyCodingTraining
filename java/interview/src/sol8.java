@@ -1,3 +1,5 @@
+package interview.src;
+
 public class sol8 {
     public static void main(String[] args) {
         System.out.println(minDistance("horse", "ros"));
